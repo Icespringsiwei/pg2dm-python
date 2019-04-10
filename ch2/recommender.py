@@ -103,8 +103,8 @@ class recommender:
             i += 1
             #separate line into fields
             fields = line.split(';')
-            user = fields[0].strip('"')
-            book = fields[1].strip('"')
+            user = fields[0].strip().strip('"')
+            book = fields[1].strip().strip('"')
             rating = int(fields[2].strip().strip('"'))
             if user in self.data:
                 currentRatings = self.data[user]
@@ -122,8 +122,8 @@ class recommender:
             i += 1
             #separate line into fields
             fields = line.split(';')
-            isbn = fields[0].strip('"')
-            title = fields[1].strip('"')
+            isbn = fields[0].strip().strip('"')
+            title = fields[1].strip().strip('"')
             author = fields[2].strip().strip('"')
             title = title + ' by ' + author
             self.productid2name[isbn] = title
@@ -138,8 +138,8 @@ class recommender:
             #print(line)
             #separate line into fields
             fields = line.split(';')
-            userid = fields[0].strip('"')
-            location = fields[1].strip('"')
+            userid = fields[0].strip().strip('"')
+            location = fields[1].strip().strip('"')
             if len(fields) > 3:
                 age = fields[2].strip().strip('"')
             else:
